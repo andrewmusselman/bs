@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Beta Software</title>
@@ -6,27 +7,12 @@
 <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
 <link rel="shortcut icon" type="image/png" href="http://s3-us-west-2.amazonaws.com/akm-bs/favicon.ico"/>
 <style>
-.bee {
-  float: left;
-  color: red;
-}
-.ee {
-  float: left;
-  color: yellow;
-}
-.tee {
-  float: left;
-  color: blue;
-}
-.ay {
-  float: left;
-  color: green;
-}
 .logo {
   float: left;
   margin-right: 20px;
 }
 .console {
+  height: 125px;
   background-color: rgb(0,0,0);
   color: white;
   font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
@@ -38,6 +24,9 @@
   letter-spacing: .2em;
   padding: 5px;
   padding-left: 31px;
+}
+.console div {
+  float: left;
 }
 .card {
   float: left;
@@ -62,13 +51,23 @@ body {
 <div class="container">
   <div class="logo">
     <div class="console">
-      <div class="bee">B</div>
-      <div class="ee">E</div>
-      <div class="tee">T</div>     
-      <div class="ay">A</div> 
+      <div id="b">B</div>
+      <div id="e">E</div>
+      <div id="t">T</div>     
+      <div id="a">A</div> 
     </div>
-    <div class="console">SOFT</div>
-    <div class="console">WARE</div>
+    <div style="clear: left;" class="console">
+      <div id="s">S</div>
+      <div id="o">O</div>
+      <div id="f">F</div>     
+      <div id="t2">T</div>
+    </div>
+    <div style="clear: left;" class="console">
+      <div id="w">W</div>
+      <div id="a2">A</div>
+      <div id="r">R</div>     
+      <div id="e2">E</div>
+    </div>
   </div>
   <div class="card">
     <p><strong>Open-source integration, data engineering, and analytics</strong></p>
@@ -76,5 +75,28 @@ body {
     <p>Other <a href="mailto:info@betasoftware.sh">info@betasoftware.sh</a></p>
   </div>
 </div>
+<script>
+var digits = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+var ids = ["b","e","t","a"];
+function getOneComponent() {
+  // Get an int in [0,15]
+  var component = Math.floor(Math.random() * digits.length)
+  return digits[component];
+}
+function getColor() {
+  var hex = "#";
+  for (var i = 0; i < 3; i++) {
+    hex += getOneComponent();
+  }
+  return hex;
+}
+function colorIds() {
+  for(var i = 0, len = ids.length; i < len; i++) {
+    var elem = document.getElementById(ids[i]);
+    elem.style.color = getColor()
+  }
+}
+colorIds();
+</script>
 </body>
 </html>
