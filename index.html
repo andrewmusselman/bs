@@ -51,10 +51,10 @@ body {
 <div class="container">
   <div class="logo">
     <div class="console">
-      <div id="b">B</div>
-      <div id="e">E</div>
-      <div id="t">T</div>     
-      <div id="a">A</div> 
+      <div id="b" style="color: red">B</div>
+      <div id="e" style="color: yellow">E</div>
+      <div id="t" style="color: blue">T</div>     
+      <div id="a" style="color: green">A</div> 
     </div>
     <div style="clear: left;" class="console">
       <div id="s">S</div>
@@ -76,29 +76,27 @@ body {
   </div>
 </div>
 <script>
-var timer = setInterval(changeChar, 3000);
+var timer = setInterval(changeChar, 2500);
 var digits = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
 var ids = ["b","e","t","a"];
+var allids = ["b","e","t","a","s","o","f","t2","w","a2","r","e2"];
+function getInt(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
 function getOneComponent() {
   // Get an int in [0,15]
-  var component = Math.floor(Math.random() * digits.length)
+  var component = getInt(digits.length);
   return digits[component];
 }
 function getColor() {
   var hex = "#";
-  for (var i = 0; i < 3; i++) {
-    hex += getOneComponent();
-  }
+  for (var i = 0; i < 3; i++) { hex += getOneComponent(); }
   return hex;
 }
-function colorIds() {
-  for(var i = 0, len = ids.length; i < len; i++) {
-    var elem = document.getElementById(ids[i]);
-    elem.style.color = getColor()
-  }
-}
-colorIds();
 function changeChar() {
+  var whichId = getInt(15);
+  var elem = document.getElementById(allids[whichId]);
+  elem.style.color = getColor();
 }
 </script>
 </body>
