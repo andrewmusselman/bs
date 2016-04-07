@@ -79,7 +79,7 @@ body {
 var timer = setInterval(changeChar, 2500);
 var digits = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
 var ids = ["b","e","t","a"];
-var allids = ["b","e","t","a","s","o","f","t2","w","a2","r","e2"];
+var idsToChange = ["s","o","f","t2","w","a2","r","e2"];
 function getInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
@@ -95,7 +95,7 @@ function getColor() {
 }
 function changeChar() {
   var whichId = getInt(15);
-  var elem = document.getElementById(allids[whichId]);
+  var elem = document.getElementById(idsToChange[whichId]);
   elem.style.color = getColor();
 }
 </script>
