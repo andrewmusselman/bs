@@ -94,7 +94,7 @@ function getColor() {
   return hex;
 }
 function changeChar() {
-  var whichId = getInt(15);
+  var whichId = getInt(idsToChange.length);
   var elem = document.getElementById(idsToChange[whichId]);
   elem.style.color = getColor();
 }
