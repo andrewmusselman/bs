@@ -30,7 +30,7 @@
   float: left;
 }
 .card {
-  float: left;
+  font-size: 20px;
 }
 .container {
   position: absolute;
@@ -39,8 +39,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 1050px;
-  height: 400px;
+  width: 470px;
+  height: 450px;
 }
 a { text-decoration: none; }
 body {
@@ -88,11 +88,6 @@ function getOneComponent() {
   var component = getInt(digits.length);
   return digits[component];
 }
-/*function getColor() {
-  var hex = "#";
-  for (var i = 0; i < 3; i++) { hex += getOneComponent(); }
-  return hex;
-}*/
 function getColor() {
   var hex = "#";
   var level = getOneComponent();
