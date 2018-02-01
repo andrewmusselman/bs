@@ -24,6 +24,7 @@
   letter-spacing: .17em;
   padding: 5px;
   padding-left: 31px;
+  text-shadow: 2px 1px #ccc;
 }
 .console div {
   float: left;
@@ -76,7 +77,7 @@ body {
   </div>
 </div>
 <script>
-var timer = setInterval(changeChar, 2500);
+var timer = setInterval(changeChar, 800);
 var digits = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
 var ids = ["b","e","t","a"];
 var idsToChange = ["s","o","f","t2","w","a2","r","e2"];
@@ -88,10 +89,15 @@ function getOneComponent() {
   var component = getInt(digits.length);
   return digits[component];
 }
-function getColor() {
+/*function getColor() {
   var hex = "#";
   for (var i = 0; i < 3; i++) { hex += getOneComponent(); }
   return hex;
+}*/
+function getColor() {
+  var hex = "#";
+  var level = getOneComponent();
+  return hex + level + level + level;
 }
 function changeChar() {
   var whichId = getInt(idsToChange.length);
